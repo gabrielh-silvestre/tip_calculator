@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="./styles/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img id="logo" src="./images/logo.svg">
+        </div>
+    </header>
+
+    <main>
+        <section class="sec_1 sec_config">
+            <div class="data_input">
+                <label class="section_tittle">Bill</label>
+                <input class="input_pattern" type="number" min="0" placeholder="0" name="total_bill">
+            </div>
+        </section>
+
+        <section class="sec_2 sec_config">
+            <h3 class="section_tittle">Select Tip %</h3>
+            <div id="tip_options">
+                <label class="btn_1 btn_tips" value="0.05">
+                    <input class="ipt_tips" type="radio" name="tip_percentage" value="0.05">
+                    <span class="checkmark">5%</span>
+                </label>
+                <label class="btn_2 btn_tips" value="0.1">
+                    <input class="ipt_tips" type="radio" name="tip_percentage" value="0.1">
+                    <span class="checkmark">10%</span>
+                </label>
+                <label class="btn_3 btn_tips" value="0.15">
+                    <input class="ipt_tips" type="radio" name="tip_percentage" value="0.15">
+                    <span class="checkmark">15%</span>
+                </label>
+                <label class="btn_4 btn_tips" value="0.25">
+                    <input class="ipt_tips" type="radio" name="tip_percentage" value="0.25">
+                    <span class="checkmark">25%</span>
+                </label>
+                <label class="btn_5 btn_tips" value="0.5">
+                    <input class="ipt_tips" type="radio" name="tip_percentage" value="0.5">
+                    <span class="checkmark">50%</span>
+                </label>
+                <label class="btn_6 btn_tips">
+                    <input id="custom_tip" class="ipt_tips" type="radio" name="tip_percentage">
+                    <input id="change_tip" type="number" min="0" name="custom" placeholder="Custom">                    
+                    <span id="custom_check" class="checkmark"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="sec_3 sec_config">
+            <div class="data_input">
+                <label class="section_tittle">Number of People</label>
+                <input class="input_pattern" type="number" min="1" placeholder="0" name="n_of_people">
+            </div>
+        </section>
+
+        <section class="sec_4 sec_config">
+            <div class="tips_and_results">
+                <div class="tip_1 tip_result">
+                    <h3>Tip Amount</h3>
+                    <p>/ person</p>                    
+                </div>
+                <div class="results tip_1_result"><strong id="tip_amount">$0.00</strong></div>
+
+                <div class="tip_2 tip_result">
+                    <h3>Total</h3>
+                    <p>/ person</p>                    
+                </div>
+                <div class="results tip_2_result"><strong id="total_amount">$0.00</strong></div>
+
+                <button class="btn_reset">RESET</button>
+            </div>
+        </section>
+    </main>
+  
+    <footer>
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br> 
+            Coded by <a href="https://www.linkedin.com/in/gabrielh-silvestre/" target="blank">Gabriel Silvestre</a>.
+        </div>
+  </footer>
+
+
+
+  <script src="./scripts/bill.js"></script>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>

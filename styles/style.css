@@ -1,0 +1,329 @@
+* {
+    font-family: 'Space Mono', monospace;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--Light_grayish_cyan_1);
+}
+
+:root {
+    --Strong_cyan: hsl(172, 67%, 45%);
+    --Very_dark_cyan: hsl(183, 100%, 15%);
+
+    --Dark_grayish_cyan_1: hsl(186, 14%, 43%);
+    --Dark_grayish_cyan_2: hsl(184, 14%, 56%);
+
+    --Light_grayish_cyan_1: hsl(185, 41%, 84%);
+    --Light_grayish_cyan_2: hsl(189, 41%, 97%);
+    --My_white: hsl(0, 0%, 100%);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 2rem 0;
+}
+
+main {
+    display: grid;
+    grid-template-areas: "sc1"
+                         "sc2"
+                         "sc3"
+                         "sc4";
+    gap: 1.8rem;
+
+    padding: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 25px 25px 0 0;
+
+    background-color: var(--My_white);
+}
+
+.sec_1 {grid-area: sc1;}
+.sec_2 {grid-area: sc2;}
+.sec_3 {grid-area: sc3;}
+.sec_4 {grid-area: sc4;}
+
+.data_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_pattern {
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--Very_dark_cyan);
+
+    background-image: url(../images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 1rem;
+    background-color: var(--Light_grayish_cyan_2);
+
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+
+    height: 2.4rem;
+}
+input[name="n_of_people"] {
+    background-image: url(../images/icon-person.svg);
+}
+
+input::placeholder {
+    color: var(--Light_grayish_cyan_1);
+}
+
+.section_tittle {
+    grid-area: sec_tittle;
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Dark_grayish_cyan_1);
+
+    padding-bottom: 0.6rem;
+}
+
+#tip_options {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-areas: "btn1 btn2"
+                         "btn3 btn4"
+                         "btn5 btn6";
+    gap: 1rem;
+}
+
+.btn_1 {grid-area: btn1;}
+.btn_2 {grid-area: btn2;}
+.btn_3 {grid-area: btn3;}
+.btn_4 {grid-area: btn4;}
+.btn_5 {grid-area: btn5;}
+.btn_6 {grid-area: btn6;}
+
+.btn_tips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--My_white);
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    background-color: var(--Very_dark_cyan);
+}
+.btn_tips input {
+    position: absolute;
+    opacity: 0;
+
+    cursor: pointer;
+}
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 0.3rem 1.2rem;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    height: 100%;
+    width: 100%;
+}
+.btn_tips:hover input ~ .checkmark {
+    color: var(--Very_dark_cyan);
+    background-color: var(--Strong_cyan);
+}
+.btn_tips:hover {background-color: var(--Strong_cyan);}
+.btn_tips input:checked  ~ .checkmark{
+    color: var(--Very_dark_cyan);
+    background-color: var(--Strong_cyan);
+}
+
+.btn_6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    background-color: var(--Light_grayish_cyan_2);
+}
+.btn_6 input[name="custom"]{
+    /* position: absolute; */
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--Very_dark_cyan);
+
+    opacity: initial;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+
+    background-color: var(--Light_grayish_cyan_2);
+
+    height: 100%;
+    width: 100%;
+}
+.btn_6 input::placeholder {color: var(--Very_dark_cyan);}
+.btn_6:hover input ~ .checkmark {
+    color: var(--Very_dark_cyan);
+    background-color: transparent;
+}
+.btn_6 input:checked  ~ .checkmark{
+    color: var(--Very_dark_cyan);
+    background-color: transparent;
+}
+#custom_tip {
+    display: none;
+}
+
+
+.tips_and_results {
+    display: grid;
+    grid-template-areas: "t1 tr1"
+                         "t2 tr2"
+                         "btn_r btn_r";
+
+    gap: 1rem;
+
+    padding: 1.2rem;
+    border: 1px solid transparent;
+    border-radius: 15px;
+
+    background-color: var(--Very_dark_cyan);
+}
+
+.tip_result{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0.4rem 0;
+}
+.tip_result h3 {
+    font-size: 1rem;
+    color: var(--My_white);
+}
+.tip_result p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--Dark_grayish_cyan_2);
+}
+.tip_result div {
+    align-self: flex-end;
+    justify-self: flex-start;
+}
+
+.tip_1 {grid-area: t1;}
+.tip_1_result {grid-area: tr1;}
+.tip_2 {grid-area: t2;}
+.tip_2_result {grid-area: tr2;}
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.results strong {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--Strong_cyan);
+}
+
+.btn_reset {
+    grid-area: btn_r;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--Very_dark_cyan);
+
+    padding: 0.3rem 1.2rem;
+    margin: 0.5rem 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    background-color: var(--Strong_cyan);
+
+    width: 100%;
+}
+.btn_reset:hover {
+    background-color: var(--Light_grayish_cyan_1);
+}
+
+footer {
+    background-color: var(--My_white);
+}
+
+@media screen and (min-width: 1440px) {
+    header {   
+        margin-top: 7rem;
+    }
+    #logo {
+        height: 4rem;
+    }
+
+    main {
+        grid-template-columns: 45% 45%;
+        grid-template-areas: "sc1 sc4"
+                             "sc2 sc4"
+                             "sc3 sc4";
+    
+        justify-content: center;
+
+        padding: 2rem 0;
+        margin: 182px;
+        margin-top: 91px;
+        border-radius: 25px;
+    
+        background-color: var(--My_white);
+    }
+    .sec_config {
+        width: 100%;
+    }
+
+    #tip_options {
+        display: grid;
+        grid-template-columns: calc(100%/3 - 11px) calc(100%/3 - 11px) calc(100%/3 - 11px);
+        grid-template-areas: "btn1 btn2 btn3"
+                             "btn4 btn5 btn6";
+        gap: 1rem;
+    }
+    .tips_and_results {
+        height: 100%;
+    }
+    .btn_tips {
+        width: 100%;
+    }
+
+    .btn_reset {
+        align-self: flex-end;
+
+        height: 50%;
+    }
+}
