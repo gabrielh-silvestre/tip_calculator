@@ -26,11 +26,11 @@ const calcs = () => {
 };
 
 const setTipAmount = () => {
-  staticElements.tipAmount.innerText = billInfo.tipAmount.toFixed(2);
+  staticElements.tipAmount.innerText = `$${billInfo.tipAmount.toFixed(2)}`;
 };
 
 const setTotalPerson = () => {
-  staticElements.totalPerPerson.innerText = billInfo.totalPerPerson.toFixed(2);
+  staticElements.totalPerPerson.innerText = `$${billInfo.totalPerPerson.toFixed(2)}`;
 };
 
 const setInfos = () => {
