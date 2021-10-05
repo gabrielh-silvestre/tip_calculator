@@ -277,48 +277,48 @@ footer {
 
 @media screen and (min-width: 1440px) {
   header {   
-      margin-top: 7rem;
+    margin-top: 7rem;
   }
   #logo {
-      height: 4rem;
+    height: 4rem;
   }
 
   main {
-      grid-template-columns: 45% 45%;
-      grid-template-areas: "sc1 sc4"
-                            "sc2 sc4"
-                            "sc3 sc4";
-  
-      justify-content: center;
+    grid-template-columns: 45% 45%;
+    grid-template-areas: "sc1 sc4"
+                          "sc2 sc4"
+                          "sc3 sc4";
 
-      padding: 2rem 0;
-      margin: 182px;
-      margin-top: 91px;
-      border-radius: 25px;
-  
-      background-color: var(--My_white);
+    justify-content: center;
+
+    padding: 2rem 0;
+    margin: 182px;
+    margin-top: 91px;
+    border-radius: 25px;
+
+    background-color: var(--My_white);
   }
   .sec_config {
-      width: 100%;
+    width: 100%;
   }
 
   #tip_options {
-      display: grid;
-      grid-template-columns: calc(100%/3 - 11px) calc(100%/3 - 11px) calc(100%/3 - 11px);
-      grid-template-areas: "btn1 btn2 btn3"
-                            "btn4 btn5 btn6";
-      gap: 1rem;
+    display: grid;
+    grid-template-columns: calc(100%/3 - 11px) calc(100%/3 - 11px) calc(100%/3 - 11px);
+    grid-template-areas: "btn1 btn2 btn3"
+                          "btn4 btn5 btn6";
+    gap: 1rem;
   }
   .tips_and_results {
-      height: 100%;
+    height: 100%;
   }
   .btn_tips {
-      width: 100%;
+    width: 100%;
   }
 
   .btn_reset {
-      align-self: flex-end;
+    align-self: flex-end;
 
-      height: 50%;
+    height: 50%;
   }
 }
