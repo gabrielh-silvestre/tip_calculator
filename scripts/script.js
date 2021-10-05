@@ -13,6 +13,8 @@ const staticElements = {
   people: document.querySelector('[name=n_of_people]'),
   tipAmount: document.querySelector('#tip_amount'),
   totalPerPerson: document.querySelector('#total_amount'),
+  resetBtn: document.querySelector('.btn_reset'),
+  inputNumbers: document.querySelectorAll('[type=number]'),
 };
 
 const addMultiplesListeners = (arr, eventName, listener) => {
@@ -63,9 +65,17 @@ const getNumberPeople = (event) => {
   setInfos();
 };
 
+const resetCalculator = () => {
+  for (let key in billInfo) billInfo[key] = 0;
+  staticElements.inputNumbers.forEach((input) => input.value = '');
+  billInfo.numberPeople = 1;
+  setInfos();
+};
+
 window.onload = () => {
   staticElements.bill.addEventListener('input', getTotalBill);
   addMultiplesListeners(staticElements.tips, 'click', getTipPercentage);
   staticElements.customTip.addEventListener('input', getTipPercentage);
   staticElements.people.addEventListener('input', getNumberPeople);
+  staticElements.resetBtn.addEventListener('click', resetCalculator);
 };
