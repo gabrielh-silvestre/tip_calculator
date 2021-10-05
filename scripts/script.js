@@ -9,6 +9,7 @@ const billInfo = {
 const staticElements = {
   bill: document.querySelector('[name=total_bill]'),
   tips: document.querySelectorAll('[name=tip_percentage'),
+  customTip: document.querySelector('#tip_custom'),
   people: document.querySelector('[name=n_of_people]'),
   tipAmount: document.querySelector('#tip_amount'),
   totalPerPerson: document.querySelector('#total_amount'),
@@ -47,11 +48,12 @@ const getTotalBill = (event) => {
 };
 
 const getTipPercentage = (event) => {
-  Number.parseFloat(event.target.value, 10) === billInfo.tipPercentage
+  Number.parseFloat(event.target.value / 100, 10) === billInfo.tipPercentage
+  || event.target.value === ''
     ? billInfo.tipPercentage = 0
-    : billInfo.tipPercentage = Number.parseFloat(event.target.value, 10);
+    : billInfo.tipPercentage = Number.parseFloat(event.target.value / 100, 10);
   
-    setInfos();
+  setInfos();
 };
 
 const getNumberPeople = (event) => {
@@ -64,5 +66,6 @@ const getNumberPeople = (event) => {
 window.onload = () => {
   staticElements.bill.addEventListener('input', getTotalBill);
   addMultiplesListeners(staticElements.tips, 'click', getTipPercentage);
+  staticElements.customTip.addEventListener('input', getTipPercentage);
   staticElements.people.addEventListener('input', getNumberPeople);
 };
