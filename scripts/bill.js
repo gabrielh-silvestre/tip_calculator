@@ -1,5 +1,5 @@
 const calcTip = () => {
-  billInfo.tipAmount = billInfo.totalBill * billInfo.tipPercentage;
+  billInfo.tipAmount = (billInfo.totalBill * billInfo.tipPercentage) / billInfo.numberPeople;
 };
 
 const calcBillPerson = () => {
